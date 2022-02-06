@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'dart:math';
 
 void main() {
@@ -37,6 +38,11 @@ class _DicePageState extends State<DicePage> {
   int rightDiceNum = 1;
 
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+
     return Center(
       child: Row(
         children: <Widget>[
