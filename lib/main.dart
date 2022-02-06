@@ -9,7 +9,7 @@ void main() {
           title: Text('Dicee'),
           backgroundColor: Colors.red,
         ),
-        body: DicePage(),
+        body: SafeArea(child: DicePage()),
       ),
     ),
   );
@@ -18,6 +18,19 @@ void main() {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Row(
+      children: <Widget>[Dice(), Dice()],
+    );
+  }
+}
+
+class Dice extends StatelessWidget {
+  const Dice({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(child: Image(image: AssetImage('images/dice1.png')));
   }
 }
